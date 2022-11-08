@@ -1,0 +1,23 @@
+.containerPost {
+  margin-top: 20px;
+}
+
+.titlePost {
+  text-align: center;
+}
+
+.titlePostCard {
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.slideImage {
+  width: 100%;
+  height: calc(100vh - 56px);
+  object-fit: cover;
+}
+
+.textCenter {
+  text-align: center;
+}
