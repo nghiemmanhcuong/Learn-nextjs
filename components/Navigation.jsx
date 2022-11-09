@@ -20,6 +20,9 @@ const Navigation = () => {
                     <Link href='/jokes' passHref legacyBehavior>
                         <Nav.Link>Jokes</Nav.Link>
                     </Link> 
+                    <Link href='/books' passHref legacyBehavior>
+                        <Nav.Link>Books</Nav.Link>
+                    </Link> 
                 </Nav>
             </Container>
         </Navbar>

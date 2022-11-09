@@ -4,6 +4,29 @@ import { Button, Card, Container } from 'react-bootstrap';
 import {AiOutlineRollback} from 'react-icons/ai'
 import Link from 'next/link';
 
+// Dữ liệu phụ thuộc vào mội request Nhưng vẫn tạo ra các file html tĩnh nễn vẫn tốt cho SEO
+export const getServerSideProps = async () => {
+    const jokes = await getJokes();
+
+    if(!jokes) {
+        return {
+            notFound:true, // Chuyển đến trang 404
+        }
+        // return {
+        //     redirect: {
+        //         destination:'/posts',
+        //         permanent:true
+        //     } // Chuyển đến trang mong muốn
+        // }
+    }else {
+        return {
+            props: {
+                jokes,
+            },
+        };
+    }
+};
+
 const Jokes = ({jokes}) => {
 
     return (
@@ -24,16 +47,6 @@ const Jokes = ({jokes}) => {
         </Container>
       </Layout>
     );
-};
-
-export const getServerSideProps = async () => {
-    const jokes = await getJokes();
-
-    return {
-        props: {
-            jokes,
-        },
-    };
 };
 
 export default Jokes;

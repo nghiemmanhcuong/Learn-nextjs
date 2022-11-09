@@ -12,7 +12,7 @@ const index = ({posts}) => {
                 <h1 className={styles.titlePost}>My all posts</h1>
                 <Stack gap={3}>
                     {posts.map((post) => (
-                        <Card key={post.id}>
+                        <Card key={post.id} className='shadow'>
                             <Card.Header className={styles.titlePostCard}>{post.title}</Card.Header>
                             <Card.Body>
                                 <Card.Text>{post.body}</Card.Text>
